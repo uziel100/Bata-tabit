@@ -1,0 +1,17 @@
+@media (min-width: 980px) {
+    html{
+        font-size: 75%;
+    }
+    .main__tables-container{        
+        overflow-x: initial;
+    }
+    .product-plan-cards-container{
+        justify-content: center;
+        overflow-x: initial;
+    }
+    .product-cards-container{
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}

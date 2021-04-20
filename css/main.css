@@ -1,0 +1,539 @@
+/* 
+    Posicionamiento --> static, absolute, relative, fixed
+    Modelo de caja (Box model) --> margin, border, padding, content
+    Tipografía --> tipos, tamaños de fuente, etc
+    Estilos visuales --> box-shadow, border-radius, gradient, etc
+    Otros --> reglas CSS y más 
+*/
+
+:root{
+    /* colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D4;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --soft-black: #757575;
+    --black: #282623;
+    --gray: #BABABA;
+    --off-white: #FAF8F7;
+    --just-white: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+    scroll-behavior : smooth;
+}
+
+header{
+    position: relative;
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: linear-gradient(207.8deg, var(--warm-black) 16.69%, var(--bitcoin-orange) 100%);
+}
+
+header img{
+    width: 150px;
+    height: 24px; 
+    margin-top: 60px;
+}
+
+.header__title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 33px;
+}
+
+.header__title-container h1{    
+    font-size: 2.4rem;
+    font-weight: 700;    
+    line-height: 2.6rem;
+    color: var(--just-white)
+}    
+
+.header__title-container p{
+    margin-top: 25px;
+    color: var(--soft-orange);
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+}
+
+.header__button{
+    position: absolute;
+    top: 270px;
+    left: calc(50% - 115px);
+    display: block;    
+    margin-top: 35px;
+    padding: 15px;
+    min-width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /* sombra */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);    
+    border: none;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--warm-black);
+}
+
+.header__button span{
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url(../assets/icons/down-arrow.svg);
+}
+
+main{
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    background-color: var(--off-white);    
+}
+
+.main__exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;    
+}
+
+.main__background-img{
+    width: 195px;
+    height: 195px;
+    margin: 40px auto;
+    background-image: url(../assets/img/Bitcoin.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main__exchange-container-title{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto; 
+    text-align: center;   
+}
+
+.main__exchange-container-title h2{
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    color: var(--warm-black);
+}
+
+.main__exchange-container-title p{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    color: var(--soft-black);
+    margin: 24px 0px;
+}
+
+.main__tables-container{
+    max-width: 650px;
+    margin: 24px auto 65px;
+    /* margin: 24px 0px 65px;  */
+    display: flex;   
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    padding-bottom: 20px;
+    gap: 20px;
+    padding: 0 30px 0;
+}
+
+
+.main__table-container{     
+    width: 70%;       
+    min-width: 235px;
+    max-width: 320px;    
+    margin: 0 auto;
+    scroll-snap-align: center;
+}
+.main__table-title{
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+    margin: 48px 0px 12px 16px;    
+}   
+
+.main__table-title--color-2{
+    color: var(--secondary-blue);
+}
+
+.table{
+    /* margin: 0 auto; */
+    width: 100%;
+}
+.main__table-date{
+    margin-top: 16px;
+    text-align: center;    
+    padding: 8px;
+    font-size: 1.2rem;
+    font-family: 'Inter';
+    line-height: 1.5rem;
+    background: var(--soft-orange);
+    border-radius: 8px;
+    color: var(--warm-black);
+}
+
+.main__table-date--color-2{
+    background: var(--soft-blue);
+}
+.table__row-title{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 500;
+    color: #B5B0AC;
+    padding: 1rem 1.2rem;
+    background-color: var(--just-white);
+}
+
+.table__row-icon-trending--down{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../assets/icons/trending-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-left: 16px;    
+}
+.table__row-icon-trending--up{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../assets/icons/trending-up.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 16px;
+    background-position: center;
+}
+
+.rn-tl{
+    border-radius: 8px 0px 0px 0px;
+}
+
+.rn-tr{
+    border-radius: 0px 8px 0px 0px;
+}
+
+.rn-bl{
+    border-radius: 0px 0px 0px 8px;
+}
+
+.rn-br{
+    border-radius: 0px 0px 8px 0px;
+}
+
+.table__row-price{
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: var(--soft-black);
+    font-weight: 400;
+    padding: 1rem 1.2rem;
+    background-color: var(--just-white);
+    text-align: center;
+}
+
+/* products detail cards */
+.main__product-detail{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    margin: 0 auto;
+    background-color: var(--warm-black);
+}
+
+.product-detail__batata-logo{
+    position: absolute;
+    top: -13px;
+    left: calc(50% - 20px);    
+    width: 4rem;
+    height: 2.5rem;
+    background-image: url(../assets/icons/batata.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.product-detail-title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-detail-title h2{
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+
+.product-detail-title p{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.product-cards-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-detail-card{
+    width: 90%;
+    min-width: 288px;
+    min-height: 152px;    
+    margin: 16px 0;
+    max-width: 400px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
+    background-color: var(--black);
+    padding: 15px;
+}
+
+.product-detail-card__icon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;        
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.product-detail-card__icon--clock{
+    background-image: url(../assets/icons/clock.svg);
+}
+
+.product-detail-card__icon--eye{
+    background-image: url(../assets/icons/eye.svg);
+}
+
+.product-detail-card__icon--price{
+    background-image: url(../assets/icons/dollar-sign.svg);
+}
+
+.product-detail-card__icon--check{
+    background-image: url(../assets/icons/check-circle.svg);
+}
+
+.product-detail-card__title{
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+    color: var(--just-white);
+    margin: 10px 0;
+    
+}
+
+.product-detail-card__body{
+    font-size: 1.4rem;   
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.bitcoin-img-container{
+    width: 100%;
+    min-width: 320px;
+    height: 70vh;
+    padding-top: 64px;
+    background-image: url(../assets/img/bitcoinbaby2x.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bitcoin-img-container h2{
+    text-align: center;    
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    color: var(--just-white);
+}
+
+/*  */
+
+.main-product-plan{
+    padding: 64px 0;
+}
+
+.main-product-plan__title{
+    text-align: center;
+    /* width: 90%; */
+    /* min-width: 288px; */
+}
+
+.main-product-plan__title h2{
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    color: var(--warm-black);
+    margin-bottom: 24px;
+}
+
+.main-product-plan__title p{
+    color: #757575;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    /* max-width: 300px; */
+    /* min-width: 250px; */
+    /* width: 100%; */
+}
+
+.product-plan-cards-container{
+    display: flex;    
+    gap: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px; 
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.product-plan-card{
+    width: 70%;
+    min-width: 190px;
+    max-width: 280px;
+    min-height: 247px;
+    padding: 16px;
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border-radius: 8px;    
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.product-plan-card__option{
+    position: absolute;
+    min-width: 100px;
+    top: -14px;
+    left: calc(50% - 50px);    
+    padding: 8px;
+    background: var(--bitcoin-orange);
+    border-radius: 8px;    
+    font-size: 1.2rem;
+    color: var(--just-white);
+    line-height: 1.5rem;
+    font-weight: 700;
+    font-family: 'Inter';
+    text-align: center;
+}
+
+.product-plan-card-body{
+    text-align: center;
+}
+.product-plan-card-body__title{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;    
+    margin: 20px 0 8px;
+    color: #000;    
+}
+.product-plan-card-body__price{
+    font-size: 5.2rem;
+    font-family: 'Inter';
+    font-weight: 700;
+    line-height: 6.3rem;
+    color: #000;
+    display: inline-block;
+    position: relative;    
+}
+.product-plan-card-body__price span{
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5px;
+    position: absolute;
+    left: -10px;
+    top: 16px;
+}
+
+.product-plan-card-body__desc{
+    font-size: 1.2rem;
+    color:#757575;
+    font-weight: 500;
+    line-height: 1.5rem;
+    margin: 16px 0;
+}
+.product-plan-card-body__button{
+    padding: 15px;
+    background: var(--off-white);
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+    cursor: pointer;
+}
+
+.product-plan-card-body__button span{
+    display: inline-block;
+    width: 24px;    
+    height: 24px;
+    background-image: url(../assets/icons/orange-right-arrow.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+.footer__links{
+    margin-right: 50px;
+}
+
+.footer__link-item{
+    list-style: none;
+    margin-bottom: 8px;
+}
+.footer__link-item a{
+    color: var(--just-white);
+    font-weight: 500;
+    line-height: 1.8rem;
+    font-size: 1.4rem;    
+    text-decoration: none;
+}
+
